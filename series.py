@@ -1,30 +1,8 @@
 import pygame
 import random
 from pygame_widgets.button import Button
+from colours import colours, col_index
 
-colours = [
-    (255, 0, 0),
-    (0, 255, 0),
-    (0, 0, 255),
-    (255, 165, 0),
-    (255, 255, 0),
-    (0, 255, 255),
-    (255, 0, 255),
-    (165, 42, 42),
-    (255, 192, 203),
-    (50, 205, 50),
-    (0, 128, 128),
-    (0, 0, 128),
-    (128, 128, 0),
-    (128, 0, 0),
-    (128, 128, 128),
-    (192, 192, 192),
-    (255, 215, 0),
-    (75, 0, 130),
-    (238, 130, 238),
-]
-
-col_index = 0
 class Series:
     def __init__(self, screen, series_type, f, expected):
         global col_index
@@ -61,7 +39,7 @@ class Series:
 
     def draw(self, slider):
         if self.toggle:
-            pygame.draw.circle(self.screen, self.col, (self.screen.get_size()[0]/2 + (self.res - self.expected) * 10 * slider[0].getValue(), 10 + (self.n-1) * slider[1].getValue()), 5)
+            pygame.draw.circle(self.screen, self.col, (self.screen.get_size()[0]/2 + (self.res - self.expected)/(self.expected) * 100 * slider[0].getValue(), 10 + (self.n-1) * slider[1].getValue()), 5)
 
     def toggle_on_off(self):
         self.toggle = not self.toggle
